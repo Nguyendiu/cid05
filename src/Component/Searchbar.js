@@ -1,20 +1,22 @@
 import React from 'react'
 import '../Asset/Search.css'
-export class SearchBar  extends React.Component{
+export class SearchBar extends React.Component{
     constructor(props){
         super(props)
-        this.state ={searchText:"haha"}
-        this.EnterInput = this.EnterInput.blind(this)
+        this.state = {searchText:'hehe'}
+
+        this.EnterInput = this.EnterInput.bind(this)
     }
     EnterInput(e){
-        //dung handel su kien onchane
+        // dung handle su kien on change
+        
         this.setState({searchText:e.target.value})
-        // thay vi lam cai nay thi lam sao de no filter ra
+        // thay vi log cai nay thi lam gi do de no filter ra nha!!!!
         console.log(this.state.searchText)
     }
     render(){
-        return(
-            <input onChange={this.EnterInput} className="Search" placeholder="Search emoji"></input>
+        return (
+            <input onChange={this.EnterInput} className="Search" type="text" placeholder="Enter your emoji..."/>
         )
     }
 }
