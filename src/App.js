@@ -13,8 +13,6 @@ function App() {
       <Emoji symbol={emojiList[i].symbol} title={emojiList[i].title} />
     )
   }
-
-
   return (
     <React.Fragment>
       <Header />
