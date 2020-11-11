@@ -1,6 +1,6 @@
 import React from 'react'
 import '../Asset/Search'
-export class Searchbar  extends React.Component{
+export class SearchBar  extends React.Component{
     constructor(props){
         super(props)
         this.state ={searchText:"haha"}

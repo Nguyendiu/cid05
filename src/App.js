@@ -1,8 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-import {Header} from "./Component/Header"
+import {Header} from './Component/Header'
+import {SearchBar} from './Component/SearchBar'
 import {Emoji} from './Component/Emoji'
-import {Searchbar} from './Component/Searchbar'
+import React from 'react'
+import {emojiList} from './resources/emojiList'
 console.log(emojiList)
 function App() {
   let elist_ = []
@@ -21,6 +23,4 @@ function App() {
     </React.Fragment>
 
   );
-}
-
 export default App;
