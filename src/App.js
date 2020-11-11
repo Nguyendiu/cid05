@@ -1,25 +1,26 @@
-import logo from './logo.svg';
+import logo from './logo.svg';// day la cho import maay cai app kia
 import './App.css';
-
+import {Header} from './Components/Header'
+import {Searchbar} from './Components/Searchbar'
+import {Emoji} from './Components/Emoji'
 function App() {
+  let elist =[]
+  for ( let i=0;i<20;i++){
+    elist.push(
+      <Emoji />
+    )
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <React.Fragment>
+    <Header />
+    <Searchbar />
+    // nhung cai element vao day
+    <Emoji />
+    </React.Fragment>
+  );     
+   
 }
 
 export default App;
+    import { Emoji } from './Components/Emoji';
+
