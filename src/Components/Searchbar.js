@@ -1,18 +1,22 @@
-import { render } from "@testing-library/react"
-import React from "react"
-export class Searchbar extends React.Component{
+import React from 'react'
+import '../assets/css/searchbar.css'
+export class SearchBar extends React.Component{
     constructor(props){
         super(props)
-        this.state = {searchtext:''}
-        this.EnterInput = this.EnterInput.blind(this)
+        this.state = {searchText:'hehe'}
 
+        this.EnterInput = this.EnterInput.bind(this)
     }
-    EnterinPut(e){
+    EnterInput(e){
+        // dung handle su kien on change
+        
         this.setState({searchText:e.target.value})
-        //thay bi log cai nay thi lam gi do de loc ra
-        console.log(this.searchText)
+        // thay vi log cai nay thi lam gi do de no filter ra nha!!!!
+        console.log(this.state.searchText)
     }
-}
-render(){
-
+    render(){
+        return (
+            <input onChange={this.EnterInput} className="full" type="text" placeholder="Enter your emoji..."/>
+        )
+    }
 }

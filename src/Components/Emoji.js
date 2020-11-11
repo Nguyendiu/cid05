@@ -1,7 +1,8 @@
 import React from 'react'
-export function Emoji(props){
-    return(
-        <p>{props.symbol}{props.title}</p>
+import '../assets/css/emoji.css'
+export function Emoji(props) {
+    return (
+        <p className="depxiu"> {props.symbol} {props.title} </p>
+
     )
 }
-})
