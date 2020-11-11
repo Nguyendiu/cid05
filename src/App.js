@@ -3,8 +3,8 @@ import './App.css';
 import {Header} from './Component/Header'
 import {SearchBar} from './Component/SearchBar'
 import {Emoji} from './Component/Emoji'
-import React from 'react'
 import {emojiList} from './resources/emojiList'
+import React from 'react'
 console.log(emojiList)
 function App() {
   let elist_ = []
@@ -19,6 +19,5 @@ function App() {
       <SearchBar />
       { elist_}
     </React.Fragment>
-
   );
-export default App;
+ export default App;
