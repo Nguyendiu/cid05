@@ -1,4 +1,5 @@
 import React from "react";
+
 import "./App.css";
 
 function Todo({ todo, index, completeTodo, removeTodo }) {
@@ -28,6 +29,7 @@ function TodoForm({ addTodo }) {
 
   return (
     <form onSubmit={handleSubmit}>
+      
       <input
         placeholder="Danh sách Việc cần làm........................................................................................Enter"
         id="input"
@@ -67,9 +69,9 @@ function App() {
    }
   return (
     <div className="app">
-      <form id="form">
+      {/* <form id="form">
       <input type="text" id="user" placeholder='User..'></input><input type="password" id="password" placeholder='Pass'></input><button id='login' >Đăng Nhập</button><button id='logout'>Đăng xuất</button><button>Đăng kí</button>
-      </form>
+      </form> */}
       <div id="logo" >
       <img src="https://i2.wp.com/eparking.vn/wp-content/uploads/2020/04/cropped-epaking-CLoud-1.png?fit=205%2C58"  />
       </div>
