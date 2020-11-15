@@ -43,3 +43,20 @@ body {
   border: solid 1px coral;
 
 }
+#logo{
+  margin-left: 80%;
+  margin-top: 10px;
+}
+#login{
+
+}
+#logout{
+
+}
+#logo{
+
+}
+#form{
+  width: 50%;
+  float: right;
+}
