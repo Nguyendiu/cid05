@@ -1,21 +1,23 @@
 import React from "react";
 import "./App.css";
 
-function Todo({ todo, index, completeTodo, removeTodo }) {
+
+function Todo({ todo, index, completeTodo, removeTodo,updateTodo,text }) {
+ 
   return (
     <div
       className="todo"
       style={{ textDecoration: todo.isCompleted ? "line-through" : "" }}
     >
       {todo.text}
-      <div>
+      <div >
         <button onClick={() => completeTodo(index)}>Complete</button>
         <button onClick={() => removeTodo(index)}>x</button>
+        <button onClick={() => updateTodo(text)}>update</button>
       </div>
     </div>
   );
 }
-
 function TodoForm({ addTodo }) {
   const [value, setValue] = React.useState("");
 
@@ -25,7 +27,6 @@ function TodoForm({ addTodo }) {
     addTodo(value);
     setValue("");
   };
-
   return (
     <form onSubmit={handleSubmit}>
       <input
@@ -54,6 +55,7 @@ function App() {
     const newTodos = [...todos];
     newTodos[index].isCompleted = true;
     setTodos(newTodos);
+    
   };
 
   const removeTodo = index => {
@@ -61,10 +63,13 @@ function App() {
     newTodos.splice(index, 1);
     setTodos(newTodos);
   };
-   const updateTodo = index =>{
-    const newTodo =[...todos,];
-    
-   }
+  const updateTodo = index =>{
+    const newTodos = [...todos];
+    newTodos.splice(index,1);
+    console.log(newTodos)
+    setTodos(newTodos);
+  }
+
   return (
     <div className="app">
       <form id="form">
@@ -75,9 +80,10 @@ function App() {
       </div>
       <h1 id="supermen">SUPERMEN</h1>
       <h2 id="title">DANH SÁCH CÔNG VIỆC CẦN XỬ LÝ</h2>
-      <div className="todo-list">
+      <div className="todo-list"  >
         {todos.map((todo, index) => (
           <Todo
+       
             key={index}
             index={index}
             todo={todo}
