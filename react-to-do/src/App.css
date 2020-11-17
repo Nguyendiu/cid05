@@ -60,3 +60,18 @@ body {
   width: 50%;
   float: right;
 }
+#list{
+  width: 100%;
+}
+#newinput{
+  width: 85%;
+  float: left;
+}
+#delete{
+  width:5% ;
+  height: 38px;
+}
+#update{
+  width: 14%;
+ height:38px ;
+}

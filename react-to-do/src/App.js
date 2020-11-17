@@ -1,23 +1,23 @@
 import React from "react";
 import "./App.css";
 
-
-function Todo({ todo, index, completeTodo, removeTodo,updateTodo,text }) {
- 
+function Todo({ todo, index, completeTodo, removeTodo, updateTodo,text }) {
   return (
-    <div
-      className="todo"
+    <div>
+      <div>
+        <input className="todo"
       style={{ textDecoration: todo.isCompleted ? "line-through" : "" }}
-    >
-      {todo.text}
-      <div >
-        <button onClick={() => completeTodo(index)}>Complete</button>
+      onClick={() => completeTodo(index)} value={todo.text}></input>
+      </div>
+      {/* {todo.text} */}
+      <div>
+        <button onClick={() => updateTodo(text)}>Update</button>
         <button onClick={() => removeTodo(index)}>x</button>
-        <button onClick={() => updateTodo(text)}>update</button>
       </div>
     </div>
   );
 }
+
 function TodoForm({ addTodo }) {
   const [value, setValue] = React.useState("");
 
@@ -27,8 +27,10 @@ function TodoForm({ addTodo }) {
     addTodo(value);
     setValue("");
   };
+
   return (
     <form onSubmit={handleSubmit}>
+      
       <input
         placeholder="Danh sách Việc cần làm........................................................................................Enter"
         id="input"
@@ -55,7 +57,6 @@ function App() {
     const newTodos = [...todos];
     newTodos[index].isCompleted = true;
     setTodos(newTodos);
-    
   };
 
   const removeTodo = index => {
@@ -63,27 +64,23 @@ function App() {
     newTodos.splice(index, 1);
     setTodos(newTodos);
   };
-  const updateTodo = index =>{
+   const updateTodo = text =>{
     const newTodos = [...todos];
-    newTodos.splice(index,1);
-    console.log(newTodos)
-    setTodos(newTodos);
-  }
-
+    setTodos(newTodos.text)
+   }
   return (
     <div className="app">
-      <form id="form">
+      {/* <form id="form">
       <input type="text" id="user" placeholder='User..'></input><input type="password" id="password" placeholder='Pass'></input><button id='login' >Đăng Nhập</button><button id='logout'>Đăng xuất</button><button>Đăng kí</button>
-      </form>
+      </form> */}
       <div id="logo" >
       <img src="https://i2.wp.com/eparking.vn/wp-content/uploads/2020/04/cropped-epaking-CLoud-1.png?fit=205%2C58"  />
       </div>
       <h1 id="supermen">SUPERMEN</h1>
       <h2 id="title">DANH SÁCH CÔNG VIỆC CẦN XỬ LÝ</h2>
-      <div className="todo-list"  >
+      <div className="todo-list">
         {todos.map((todo, index) => (
           <Todo
-       
             key={index}
             index={index}
             todo={todo}
